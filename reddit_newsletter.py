@@ -39,7 +39,7 @@ class BrowserTool:
                 post.comments.replace_more(limit=0)  # Load top-level comments only
                 comments = post.comments.list()
                 if max_comments_per_post is not None:
-                    comments = comments[:7]
+                    comments = comments[:max_comments_per_post]
 
                 for comment in comments:
                     post_data["comments"].append(comment.body)
